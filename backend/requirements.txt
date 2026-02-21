@@ -6,3 +6,4 @@ python-dotenv==1.0.1
 whoosh==2.7.4
 python-multipart==0.0.9
 pydantic==2.7.1
+sentence-transformers==2.7.0
