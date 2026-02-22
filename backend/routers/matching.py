@@ -4,6 +4,7 @@ Accepts a PatientProfile, returns ranked list of matching trials.
 """
 
 from fastapi import APIRouter, HTTPException
+import numpy as np
 from models.patient import PatientProfile
 from models.trial import Trial
 from services.sphinx_search import search_trials
@@ -15,7 +16,7 @@ router = APIRouter(prefix="/api/match", tags=["matching"])
 @router.post("", response_model=list[Trial])
 async def match_trials(profile: PatientProfile):
     # call the scorer with the request data (use dict() so scorer's .get() works)
-    annotated = scoreData(profile.dict(), sample_size=20)
+    annotated = scoreData(profile.dict(), sample_size=50)
 
     # map CSV-style keys to Trial model keys expected by the response_model
     out = []
@@ -50,6 +51,8 @@ async def match_trials(profile: PatientProfile):
             "phase": _to_str(r.get("Phase") or r.get("phase")),
             "study_type": _to_str(r.get("Study_Type") or r.get("study_type")),
             "brief_summary": _to_str(r.get("Brief_Summary") or r.get("brief_summary")),
-            "match_score": float(r.get("match_raw_score") or r.get("match_score") or 0.0)
+            "match_score": float(r.get("match_raw_score") or r.get("match_score") or 0.0),
+            "confidence": r.get("match_confidence"),
+            "probability": float(r.get("match_probability") or 0.0)
         })
     return out
