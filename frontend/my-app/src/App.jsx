@@ -2,6 +2,8 @@ import { useState } from "react";
 import PatientIntake from "./components/PatientIntake.jsx";
 import TrialResults from "./components/TrialResults.jsx";
 import Landing from "./components/Landing.jsx";
+import HowItWorks from "./components/HowItWorks.jsx";
+import About from "./components/About.jsx";
 import { FaHeart } from "react-icons/fa";
 import "./App.css";
 
@@ -46,8 +48,8 @@ return (
           <span className="logo-ai">AI</span>
         </div>
           <nav className="header-nav">
-            <span>How it works</span>
-            <span>About</span>
+            <span className="nav-link" onClick={() => setRoute("how")} role="button" tabIndex={0}>How it works</span>
+            <span className="nav-link" onClick={() => setRoute("about")} role="button" tabIndex={0}>About</span>
           </nav>
         </div>
 
@@ -62,7 +64,19 @@ return (
 
       <main className="app-main">
         {route === "landing" && (
-          <Landing onGetStarted={() => setRoute("intake")} />
+          <Landing 
+            onGetStarted={() => setRoute("intake")} 
+            onHowItWorks={() => setRoute("how")}
+            onAbout={() => setRoute("about")}
+          />
+        )}
+
+        {route === "how" && (
+          <HowItWorks onGetStarted={() => setRoute("intake")} />
+        )}
+
+        {route === "about" && (
+          <About onGetStarted={() => setRoute("intake")} />
         )}
 
         {route === "intake" && !showResults && (
