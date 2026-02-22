@@ -19,6 +19,25 @@
   --shadow-lg: 0 8px 32px rgba(0,0,0,.10);
 }
 
+body {
+  background-color: var(--teal);
+  padding: 2rem;
+}
+
+.viewport-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  min-height: calc(100vh - 4rem);
+  background: var(--frame-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-frame);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Clips the grid at the rounded corners */
+  box-shadow: 0 40px 100px -20px rgba(0,0,0,0.1);
+  position: relative;
+}
+
 /* ─── Reset ──────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { font-size: 16px; -webkit-font-smoothing: antialiased; }
@@ -31,15 +50,6 @@ body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--t
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
-}
-
-.bg-grid {
-  position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.5;
 }
 
 .bg-glow {
@@ -453,4 +463,98 @@ body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--t
   text-align: center; padding: 1.5rem;
   border-top: 1px solid var(--border);
   font-size: 0.78rem; color: var(--text-3);
+}
+
+/* ─── Header Redesign ────────────────────────────────────── */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Spread logo and CTA */
+  padding: 1rem 4rem; /* Wide breathing room */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.header-nav span { cursor: pointer; transition: color 0.2s; }
+.header-nav span:hover { color: var(--teal); }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Adjust Main to allow full-bleed landing */
+.app-main {
+  position: relative;
+  z-index: 5;
+  flex: 1;
+  width: 100%;
+  margin: 0 auto;
+  /* Remove global padding so landing can go edge-to-edge */
+  padding: 0; 
+}
+
+/* Only apply constraints for intake/results */
+.intake-section, .results-section {
+  max-width: 860px;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+}
+
+/* ─── Logo Refinements ───────────────────────────────────── */
+.clickable-logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  transition: transform 0.15s ease;
+}
+
+.clickable-logo:hover {
+  transform: translateY(-1px); /* Subtle lift on hover */
+}
+
+logo-icon-logo-heart {
+  /* Change these two numbers and the heart will now respond */
+  width: 42px; 
+  height: 500px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  filter: drop-shadow(0 2px 4px rgba(5, 150, 105, 0.2));
+  
+  /* Prevents the logo from shrinking if the header gets crowded */
+  flex-shrink: 0; 
+  
+}
+
+/* Ensure the logo text doesn't look like a button anymore */
+.logo-text {
+  color: var(--text-main);
+  border: none;
+  background: none;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }

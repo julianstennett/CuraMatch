@@ -16,6 +16,8 @@ class Trial(BaseModel):
     study_type: Optional[str] = None
     brief_summary: Optional[str] = None
     match_score: Optional[float] = None
+    confidence: Optional[str] = None
+    probability: Optional[float] = None
 
 
 class TrialExplainRequest(BaseModel):

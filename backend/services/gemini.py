@@ -52,14 +52,23 @@ Patient description:
 Return a JSON object with these exact keys (use null if unknown):
 {{
   "age": <integer or null>,
-  "sex": <"Male" | "Female" | "All" | null>,
+  "sex": <"Male" | "Female">,
   "conditions": [<list of medical conditions as strings>],
   "medications": [<list of medications as strings>],
-  "hba1c": <float or null>,
-  "bmi": <float or null>,
+  "hba1c": <float>,
+  "bmi": <float>,
   "diabetes_duration_years": <integer or null>,
   "healthy_volunteer": <true | false>,
-  "additional_notes": <string or null>
+  "additional_notes": <string or null>,
+
+  "state": <2-letter US state code or null>,
+  "on_insulin": <true | false>,
+  "recent_glp1": <true | false>,
+  "ckd": <true | false>,
+  "pregnant": <true | false>,
+  "type1_diabetes": <true | false>,
+  "on_metformin": <true | false>,
+  "stable_metformin": <true | false>
 }}
 
 Return ONLY the JSON object, no explanation."""
