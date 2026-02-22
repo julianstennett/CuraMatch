@@ -5,7 +5,7 @@
 ## Project Structure
 
 ```
-carecompass-ai/
+CuraMatch/
 ├── backend/
 │   ├── models/
 │   │   ├── patient.py       ← Pydantic models for patient profiles
