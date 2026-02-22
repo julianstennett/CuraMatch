@@ -165,7 +165,7 @@ export default function HowItWorks({ onGetStarted }) {
                 <DemoRow label="HbA1c" value="Within range" tone="good" />
                 <DemoRow label="BMI" value="Slightly high" tone="warn" />
                 <DemoRow label="Medication" value="Metformin required" tone="good" />
-                <DemoRow label="Distance" value="12.4 miles" tone="good" />
+                <DemoRow label="Distance" value="Same state" tone="good" />
               </div>
 
               <div className="cm-demo-footer">

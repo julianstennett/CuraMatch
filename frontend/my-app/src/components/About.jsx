@@ -86,19 +86,19 @@ export default function About({ onGetStarted }) {
             <div className="cm-panel">
               <div className="cm-panel-title">What CuraMatch is</div>
               <ul className="cm-panel-list">
-                <li>• A trial discovery assistant</li>
-                <li>• A scoring and ranking engine</li>
-                <li>• A transparent explanation layer</li>
-                <li>• A location-aware shortlist builder</li>
+                <li>A trial discovery assistant</li>
+                <li>A scoring and ranking engine</li>
+                <li>A transparent explanation layer</li>
+                <li>A location-aware shortlist builder</li>
               </ul>
 
               <div className="cm-panel-divider" />
 
               <div className="cm-panel-title">What CuraMatch isn’t</div>
               <ul className="cm-panel-list">
-                <li>• A medical diagnosis tool</li>
-                <li>• A replacement for clinical judgment</li>
-                <li>• A guarantee of enrollment</li>
+                <li>A medical diagnosis tool</li>
+                <li>A replacement for clinical judgment</li>
+                <li>A guarantee of enrollment</li>
               </ul>
             </div>
           </div>

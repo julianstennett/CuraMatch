@@ -7,7 +7,7 @@ export default function TrialResults({ trials, patientProfile, onReset }) {
     <div className="results-section">
       <div className="results-header">
         <div className="results-title">
-          <h2>
+          <h2 style={{ fontFamily: "Inter, system-ui, sans-serif" }}>
             {trials.length > 0
               ? `${trials.length} Matching Trials Found`
               : "No Trials Found"}
