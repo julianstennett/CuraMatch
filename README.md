@@ -1,4 +1,4 @@
-# CareCompass AI 🩺
+# CuraMatch 🩺
 
 > Clinical trial matching for Type 2 Diabetes patients, powered by Gemini AI + Whoosh full-text search.
 
