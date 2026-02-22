@@ -47,7 +47,6 @@ export default function TrialCard({ trial, patientProfile, rank }) {
 
       <h3 className="trial-title">{trial.title}</h3>
       <h3 className="trial-title">Score: {trial.match_score}</h3>
-
       {trial.brief_summary && (
         <p className="trial-summary">{trial.brief_summary.slice(0, 280)}…</p>
       )}
@@ -86,7 +85,7 @@ export default function TrialCard({ trial, patientProfile, rank }) {
         onClick={() => setShowExplain((v) => !v)}
         style={{ borderColor: color, color }}
       >
-        {showExplain ? "▲ Hide AI explanation" : "✨ Explain Eligibility"}
+        {showExplain ? "▲ Hide AI explanation" : "✨ Explain this trial for me"}
       </button>
 
       {showExplain && (
