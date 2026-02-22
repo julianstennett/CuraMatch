@@ -108,21 +108,7 @@ export default function Landing({ onGetStarted, onHowItWorks, onAbout }) {
                 Match Breakdown
               </span>
 
-              <span
-                className="viz-pill"
-                style={{
-                  fontSize: "0.8rem",
-                  fontWeight: 650,
-                  padding: "0.25rem 0.6rem",
-                  borderRadius: 999,
-                  border: "1px solid rgba(15,23,42,0.10)",
-                  background: "rgba(15,23,42,0.03)",
-                  color: "rgba(15,23,42,0.72)",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                12 mi
-              </span>
+              
             </div>
 
             {/* Bars */}
@@ -208,7 +194,7 @@ export default function Landing({ onGetStarted, onHowItWorks, onAbout }) {
 
           <div className="card-stats">
             <span className="match-value">92%</span>
-            <span className="match-label">Eligibility Score</span>
+            <span className="match-label">Match Score</span>
           </div>
 
           <div className="card-footer">
